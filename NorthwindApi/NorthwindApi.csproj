@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NorthwindApi.DataAccess\NorthwindApi.DataAccess.csproj" />
+    <ProjectReference Include="..\NorthwindApi.Entities\NorthwindApi.Entities.csproj" />
+  </ItemGroup>
+
 
 </Project>
