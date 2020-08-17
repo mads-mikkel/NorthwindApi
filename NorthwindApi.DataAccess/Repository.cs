@@ -6,16 +6,24 @@ using System.Data.SqlClient;
 
 namespace NorthwindApi.DataAccess
 {
-    public class InvoiceRepository
+    public class Repository
     {
         const string ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Northwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-        public List<Invoice> GetAll(string customerID)
+        public List<Invoice> GetAllInvoices(string customerID)
         {
             string sql = $"SELECT CustomerName, ExtendedPrice, Freight FROM Invoices WHERE CustomerID LIKE '{customerID}'";
             DataRowCollection dataRows = Execute(sql);
-            List<Invoice> invoices = Process(dataRows);
+            List<Invoice> invoices = ProcessInvoices(dataRows);
             return invoices;
+        }
+
+        public List<Customer> GetAllCustomers()
+        {
+            string sql = "SELECT DISTINCT CustomerID FROM Customers";
+            DataRowCollection dataRows = Execute(sql);
+            List<Customer> customers = ProcessCustomers(dataRows);
+            return customers;
         }
 
         private DataRowCollection Execute(string sql)
@@ -35,7 +43,19 @@ namespace NorthwindApi.DataAccess
             }
         }
 
-        private List<Invoice> Process(DataRowCollection dataRows)
+        private List<Customer> ProcessCustomers(DataRowCollection dataRows)
+        {
+            List<Customer> customers = new List<Customer>();
+            foreach (DataRow row in dataRows)
+            {
+                string customerName = (string)row["CustomerID"];
+                Customer customer = new Customer() { CustomerName = customerName };
+                customers.Add(customer);
+            }
+            return customers;
+        }
+
+        private List<Invoice> ProcessInvoices(DataRowCollection dataRows)
         {
             List<Invoice> invoices = new List<Invoice>();
             foreach (DataRow row  in dataRows)
