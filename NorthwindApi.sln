@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindApi.Entities", "No
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindApi.DataAccess", "NorthwindApi.DataAccess\NorthwindApi.DataAccess.csproj", "{869946A5-3366-4A81-A60C-E25B32420BC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindApi.Api", "NorthwindApi.Api\NorthwindApi.Api.csproj", "{B5855EE7-779F-4142-A392-220DE1FE6BF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{869946A5-3366-4A81-A60C-E25B32420BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{869946A5-3366-4A81-A60C-E25B32420BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{869946A5-3366-4A81-A60C-E25B32420BC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5855EE7-779F-4142-A392-220DE1FE6BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5855EE7-779F-4142-A392-220DE1FE6BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5855EE7-779F-4142-A392-220DE1FE6BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5855EE7-779F-4142-A392-220DE1FE6BF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
